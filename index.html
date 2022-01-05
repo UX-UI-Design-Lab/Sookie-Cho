@@ -26,18 +26,27 @@
       margin: 12vw;*/
     }
 
-    h1 {
+    h1, h2 {
       position: absolute;
       left: 12vw;
       bottom: 10vh;
       margin-top: 20vh;
       color: black;
-      font-size: 15vmin;
+      font-size: 12vmin;
       font-family: 'Cormorant Garamond', serif;
+    }
+    #subtitle{
+      font-size: 3vmin;
+      letter-spacing: 3vmin;
+    }
+
+    h2 {
+      font-size: 3vmin;
+      bottom: calc(10vh - 1vmin);
     }
   </style>
   <script src="./addons/p5.js"></script>
-  <script src="./addons/p5.sound.js"></script>
+  <!-- script src="p5.sound.js"></script -->
   <script src="sketch.js"></script>
 </head>
 
@@ -48,7 +57,25 @@
     </quote>
 
     <h1> Sookyung Cho </h1>
+    <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> a designer, researcher, educator who cares about changes.</h2>
   </main>
+
+<script>
+  let myBody = document.querySelector("body");
+  let myQuote = document.querySelector("quote");
+  let myName = document.querySelector("h1");
+  let mySubtitle = document.querySelector("h2");
+  myBody.addEventListener('click', showMenu, false);
+
+  function showMenu(){
+    myQuote.style.display = 'none';
+    myName.style.transform = 'translateY(-30vh)';
+    myName.style.fontSize = "2.5em";
+    mySubtitle.style.transform = 'translateY(-30vh)';
+    mySubtitle.style.fontSize = "1em";
+  }
+</script>
+
 </body>
 
 </html>
