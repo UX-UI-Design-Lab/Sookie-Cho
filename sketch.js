@@ -46,13 +46,13 @@ function draw() {
   modulator.amp(modAmp, 0.01); // fade time of 0.1 for smooth fading
 */
   // background(0, 0, 0, 0.5);
-  stroke(0, 10, 90, 0.1);
+  stroke(colorOfDay, 10, 90, 0.1);
   xoff = xoff + .01;
   let n = noise(xoff) * width;
   line(0, n, width, n);
   // put drawing code here
 
-  fill(0, 10, 50, 0.1);
+  fill(colorOfDay, 10, 50, 0.1);
   noStroke();
   // stroke(0, 50, 90);
   bx1 = windowWidth * (-1);
@@ -81,7 +81,7 @@ function mousePressed(){
     circle(x, y, 25);
   }
   */
-  
+
 }
 
 function windowResized(){
