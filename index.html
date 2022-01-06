@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.36/Tone.js" integrity="sha512-FkXBiAsXthpXa2/awMJyeGeXTgWttH9hYjH8Suwzc5J68kwzTgina+v/rptw9/RCd/w8Q4XphW354Dv1TyBE1Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
+
   <style>
     body {
       padding: 0;
@@ -17,7 +21,7 @@
     quote {
       position: absolute;
       left: 12vw;
-      top: 10vh;
+      top: calc(10vh + 300px);
       width: 75vw;
       height: 10vh;
       color: white;
@@ -52,26 +56,41 @@
       position: absolute;
       font-family: 'Nanum Gothic', sans-serif;
       font-weight: 100;
-      font-size: 0.75em;
       /* letter-spacing: 1em; */
       bottom: 1em;
       right: 1em;
     }
 
-    footer a:link, a:visited {
+    a:link, a:visited, a:active {
+      font-family: 'Nanum Gothic', sans-serif;
+      font-weight: 100;
+      font-size: 0.75em;
+      color: hsl(0, 10%, 70%) !important;
+      text-decoration: none;
+      padding: 0.3em;
+
+    }
+
+    footer > a:link, a:visited {
       color: hsl(0, 10%, 20%);
       text-decoration: none;
       padding: 0.3em;
     }
 
-    footer a:hover {
-      color: hsl(0, 0%, 20%);
+    footer > a:hover {
+      color: hsl(0, 0%, 20%) !important;
       text-decoration: none;
       background-color: hsla(0, 0%, 95%, 0.5);
       padding: 0.3em;
       border-radius: 0.3em;
     }
 
+    @media screen and (max-width: 800px) {
+        quote {
+            display: none;
+        }
+
+    }
   </style>
   <script src="./addons/p5.js"></script>
   <!-- script src="p5.sound.js"></script -->
@@ -87,27 +106,113 @@
     <h1> Sookyung Cho </h1>
     <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> a designer, researcher, educator who cares about changes.</h2>
 
-
   </main>
   <footer>
-    <a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a> | <a href="mailto:sookie@g.ucla.edu"> contact: sookie at g dot ucla dot edu </a>
-  </footer>
+    <a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a> | <a href="mailto:sookie@g.ucla.edu"> contact: sookie at g dot ucla dot edu </a> | <!-- button id='soundBTN'> sound </button -->
+ </footer>
 
 <script>
   let myBody = document.querySelector("body");
   let myQuote = document.querySelector("quote");
   let myName = document.querySelector("h1");
   let mySubtitle = document.querySelector("h2");
+  let myButton = document.querySelector("#soundBTN");
+
   myBody.addEventListener('click', showMenu, false);
+  myButton.addEventListener('click', playSound, false);
 
   function showMenu(){
+
     myQuote.style.display = 'none';
     myName.style.transform = 'translateY(-30vh)';
     myName.style.fontSize = "2.5em";
     mySubtitle.style.transform = 'translateY(-30vh)';
     mySubtitle.style.fontSize = "0.9em";
+
+    const synth = new Tone.MembraneSynth().toDestination();
+    synth.triggerAttackRelease("C0", "16n");
+
+/*
+    const noiseSynth = new Tone.NoiseSynth().toDestination();
+    noiseSynth.triggerAttackRelease("8n", 0.05);
+*/
   }
+
+
+
+function playSound() {
+
+  const amSynth = new Tone.AMSynth().toDestination();
+  amSynth.volume.value = -6;
+  amSynth.triggerAttackRelease("G#3", 0.2);
+
+  /*
+
+  const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+  const now = Tone.now();
+  synth.triggerAttack("D4", now);
+  synth.triggerAttack("F4", now + 0.5);
+  synth.triggerAttack("A4", now + 1);
+  synth.triggerAttack("C5", now + 1.5);
+  synth.triggerAttack("E5", now + 2);
+  synth.triggerRelease(["D4", "F4", "A4", "C5", "E5"], now + 2.5);
+*/
+  // const vol = new Tone.Volume().toDestination();
+  // const osc = new Tone.Oscillator().connect(vol).start();
+  // vol.volume.value = 0.001;
+
+/*
+  const player = new Tone.Player("./Inverse_ITU-R_468_weighted__grey_noise_.ogg.mp3").toDestination();
+  Tone.loaded().then(() => {
+  	player.start();
+  });
+*/
+
+
+}
+  function playNoise() {
+
+    /*
+      //create a synth and connect it to the main output (your speakers)
+      const synth = new Tone.Synth().toDestination();
+      //play a middle 'C' for the duration of an 8th note
+      synth.triggerAttackRelease("C4", "8n");
+      */
+
+// need to control the volumn
+/*
+      // initialize the noise and start
+      const noise = new Tone.Noise("brown").start();
+      // make an autofilter to shape the noise
+      const autoFilter = new Tone.AutoFilter({
+      	frequency: "4n",
+      	baseFrequency: 20000,
+      	octaves: 8
+      }).toDestination().start();
+      // connect the noise
+      noise.connect(autoFilter);
+      // start the autofilter LFO
+      autoFilter.start();
+*/
+
+
+/*
+const noise = new Tone.Noise().toDestination().start();
+noise.type = "brown";
+
+const vol = new Tone.Volume().toDestination();
+const osc = new Tone.Oscillator().connect(vol).start();
+vol.volume.value = 0.001;
+*/
+  }
+
 </script>
+
+
+
+
+
+
 
 </body>
 

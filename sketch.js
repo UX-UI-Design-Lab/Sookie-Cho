@@ -4,8 +4,14 @@ let colorAdjust = 10;
 let m;
 let bx1, by1, bx2, by2, bx3, by3, bx4, by4;
 
+let starHeight = [];
+let menu = [];
+let links = ['http://ancova.x10.mx/wp/about-me/', 'http://ancova.x10.mx/wp/research/', 'http://ancova.x10.mx/wp/portfolio/', 'http://ancova.x10.mx/wp/teaching/', ' '];
+let linktext = ['about me', 'play ground', 'time machine', 'learn to teach', ' '];
+
 let carrier; // this is the oscillator we will hear
 let modulator; // this oscillator will modulate the amplitude of the carrier
+
 
 function setup() {
   colorMode(HSL, 360, 100, 100, 1);
@@ -16,6 +22,21 @@ function setup() {
   m = month();
   colorOfDay = random(-15 + (m - 1)*15, 15 + (m - 1)*15); // jan for -15 to 15
   colorAdjust = day(); // 1 ~ 28/31
+
+  fill(0, 0, 100, 0.5);
+  stroke(0, 0, 100, 0.3);
+  for(let i = 1; i < 5; i++)
+  {
+    starHeight[i] = random(30, 200);
+    circle(width/5*i, starHeight[i], 10);
+    line(width/5*i, starHeight[i], width/5*i + (width/5 * (starHeight[i]/starHeight[1])), 0);
+    menu[i-1] = createA(links[i-1], linktext[i-1], '_blank');
+    menu[i-1].position(width/5*i + 16, starHeight[i]);
+    menu[i-1].style.textDecoration = 'none';
+  }
+
+
+
 /*
   carrier = new p5.Oscillator(); // connects to master output by default
   carrier.freq(340);
@@ -72,6 +93,13 @@ function draw() {
 }
 
 function mousePressed(){
+
+  fill(0, 0, 100, 1);
+  for(let i = 1; i < 6; i++)
+  {
+    circle(width/5*i, starHeight[i], 10);
+  }
+
   /*
   fill(0, 30, 70, 1);
   let steps = 10;
@@ -89,4 +117,13 @@ function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
   background(0);
   noiseSeed(99);
+
+  fill(0, 0, 100, 0.5);
+  stroke(0, 0, 100, 0.3);
+  for(let i = 1; i < 6; i++)
+  {
+    circle(width/5*i, starHeight[i], width/120);
+    line(width/5*i, starHeight[i], width/5*i + (width/5 * (starHeight[i]/starHeight[1])), 0);
+    menu[i-1].position(width/5*i + 16, starHeight[i]);
+  }
 }
