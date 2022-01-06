@@ -47,6 +47,31 @@
       font-size: 2.5vmin;
       bottom: calc(10vh - 1vmin);
     }
+
+    footer {
+      position: absolute;
+      font-family: 'Nanum Gothic', sans-serif;
+      font-weight: 100;
+      font-size: 0.75em;
+      /* letter-spacing: 1em; */
+      bottom: 1em;
+      right: 1em;
+    }
+
+    footer a:link, a:visited {
+      color: hsl(0, 10%, 20%);
+      text-decoration: none;
+      padding: 0.3em;
+    }
+
+    footer a:hover {
+      color: hsl(0, 0%, 20%);
+      text-decoration: none;
+      background-color: hsla(0, 0%, 95%, 0.5);
+      padding: 0.3em;
+      border-radius: 0.3em;
+    }
+
   </style>
   <script src="./addons/p5.js"></script>
   <!-- script src="p5.sound.js"></script -->
@@ -61,7 +86,12 @@
 
     <h1> Sookyung Cho </h1>
     <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> a designer, researcher, educator who cares about changes.</h2>
+
+
   </main>
+  <footer>
+    <a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a> | <a href="mailto:sookie@g.ucla.edu"> contact: sookie at g dot ucla dot edu </a>
+  </footer>
 
 <script>
   let myBody = document.querySelector("body");

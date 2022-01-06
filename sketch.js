@@ -1,5 +1,6 @@
 let xoff = 0.0;
 let colorOfDay = 0;
+let colorAdjust = 10;
 let m;
 let bx1, by1, bx2, by2, bx3, by3, bx4, by4;
 
@@ -14,7 +15,7 @@ function setup() {
   background(0);
   m = month();
   colorOfDay = random(-15 + (m - 1)*15, 15 + (m - 1)*15); // jan for -15 to 15
-
+  colorAdjust = day(); // 1 ~ 28/31
 /*
   carrier = new p5.Oscillator(); // connects to master output by default
   carrier.freq(340);
@@ -52,7 +53,7 @@ function draw() {
   line(0, n, width, n);
   // put drawing code here
 
-  fill(colorOfDay, 10, 50, 0.1);
+  fill(colorOfDay, colorAdjust, 50, 0.1);
   noStroke();
   // stroke(0, 50, 90);
   bx1 = windowWidth * (-1);
