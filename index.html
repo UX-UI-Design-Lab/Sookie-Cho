@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>p5-playground</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +22,14 @@
     quote {
       position: absolute;
       left: 12vw;
-      top: calc(10vh + 300px);
+      top: 300px;
       width: 75vw;
       height: 10vh;
       color: white;
       opacity: 0.8;
       /*padding: 5vw;
       margin: 12vw;*/
+      display:none;
     }
 
     h1, h2 {
@@ -59,6 +61,7 @@
       /* letter-spacing: 1em; */
       bottom: 1em;
       right: 1em;
+      display: none;
     }
 
     a:link, a:visited, a:active {
@@ -85,12 +88,16 @@
       border-radius: 0.3em;
     }
 
-    @media screen and (max-width: 800px) {
-        quote {
-            display: none;
-        }
+    @media screen and (min-width: 800px) {
 
+        /*quote {
+            display: block;
+        }*/
+        footer {
+            display:block;
+        }
     }
+
   </style>
   <script src="./addons/p5.js"></script>
   <!-- script src="p5.sound.js"></script -->
@@ -119,16 +126,16 @@
   let myButton = document.querySelector("#soundBTN");
 
   myBody.addEventListener('click', showMenu, false);
-  myButton.addEventListener('click', playSound, false);
+  // myButton.addEventListener('click', playSound, false);
 
   function showMenu(){
-
+/*
     myQuote.style.display = 'none';
     myName.style.transform = 'translateY(-30vh)';
-    myName.style.fontSize = "2.5em";
+    myName.style.fontSize = "12vmin";
     mySubtitle.style.transform = 'translateY(-30vh)';
-    mySubtitle.style.fontSize = "0.9em";
-
+    mySubtitle.style.fontSize = "2.5vmin";
+*/
     const synth = new Tone.MembraneSynth().toDestination();
     synth.triggerAttackRelease("C0", "16n");
 

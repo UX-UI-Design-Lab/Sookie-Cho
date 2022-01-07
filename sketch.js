@@ -120,10 +120,15 @@ function windowResized(){
 
   fill(0, 0, 100, 0.5);
   stroke(0, 0, 100, 0.3);
-  for(let i = 1; i < 6; i++)
+  for(let i = 1; i < 5; i++)
   {
     circle(width/5*i, starHeight[i], width/120);
     line(width/5*i, starHeight[i], width/5*i + (width/5 * (starHeight[i]/starHeight[1])), 0);
-    menu[i-1].position(width/5*i + 16, starHeight[i]);
+
+    if (windowWidth > 500){
+      menu[i-1].position(width/5*i + 16, starHeight[i]);
+    } else {
+      menu[i-1].position(width/5 + 16, starHeight[1] + 16 * (i-1));
+    }
   }
 }
