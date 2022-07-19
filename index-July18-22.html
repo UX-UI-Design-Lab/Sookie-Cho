@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>p5-playground</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.36/Tone.js" integrity="sha512-FkXBiAsXthpXa2/awMJyeGeXTgWttH9hYjH8Suwzc5J68kwzTgina+v/rptw9/RCd/w8Q4XphW354Dv1TyBE1Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
+
+  <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script -->
+
+  <!-- script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script -->
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    quote {
+      position: absolute;
+      left: 12vw;
+      top: 300px;
+      width: 75vw;
+      height: 10vh;
+      color: white;
+      opacity: 0.8;
+      /*padding: 5vw;
+      margin: 12vw;*/
+      display:none;
+    }
+
+    h1, h2 {
+      position: absolute;
+      left: 12vw;
+      bottom: 10vh;
+      margin-top: 20vh;
+      color: hsl(0, 0%, 5%);
+      font-size: 12vmin;
+      font-weight: 300;
+      font-family: 'Cormorant Garamond', serif;
+      filter: drop-shadow(0 0 0.75rem darkgray);
+    }
+    #subtitle{
+      font-size: 3vmin;
+      letter-spacing: 3vmin;
+    }
+
+    h2 {
+      font-family: 'Nanum Gothic', sans-serif;
+      font-weight: 100;
+      font-size: 2.5vmin;
+      bottom: calc(10vh - 1vmin);
+    }
+
+    section {
+        position: absolute;
+        left: 12vw;
+        /* left: 4vw;*/
+        bottom: 0vh; /* pull it down later */
+        margin-top: 20vh;
+        margin-bottom: 3em;
+        color: black;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .hole {
+      width: 5px;
+      height: 5px;
+      /* border: 10px solid hsla(180, 20%, 90%, 0.8); */
+      border-radius: 50%;
+      /* border-radius: 50% / 100% 100% 0 0;
+      border-radius: 100% 0 0 100% / 50%; */
+      /* border-radius: 100% 100% 0 0 / 50%; */
+
+      /*border-style: dotted dashed solid double;*/
+      /* border-style: none none solid none; */
+      border-style: none solid none none;
+
+      /* background: hsla(180, 10%, 10%, 0.8), radial-gradient(#f69d3c, #3f87a6);*/
+      background: radial-gradient(farthest-corner at 10px 10px, hsla(180, 10%, 10%, 1) 0%, hsla(180, 10%, 10%, 0.2) 100%);
+      /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
+
+      box-shadow: 0 0 0 1px hsla(0, 0%, 10%, 0.2),
+                  /*0 0 0 2px hsla(0, 0%, 100%, 1),*/
+                  -6px 5px 3px 5px hsla(0, 0%, 100%, 0.3),
+                  6px 5px 3px 5px hsla(0, 0%, 0%, 0.3);
+
+      outline: 1px solid hsla(180, 0%, 90%, 0.2);
+
+      /*filter: drop-shadow(15px 10px 10px 25px hsla(0, 0%, 0%, 0.7)),*/
+    }
+
+    .craters {
+      width: 100px;
+      height: 20px;
+      border: 30px solid hsla(180, 20%, 90%, 0.8);
+      border-radius: 50%;
+      /* border-radius: 50% / 100% 100% 0 0;
+      border-radius: 100% 0 0 100% / 50%; */
+      /* border-radius: 100% 100% 0 0 / 50%; */
+
+      /*border-style: dotted dashed solid double;*/
+      /* border-style: none none solid none; */
+       border-style: none solid none none;
+
+      /* background: hsla(180, 10%, 10%, 0.8), radial-gradient(#f69d3c, #3f87a6);*/
+      background: radial-gradient(farthest-corner at 20px 10px, hsla(180, 10%, 10%, 1) 0%, hsla(180, 10%, 10%, 0.7) 100%);
+      /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
+
+      box-shadow: 0 0 0 1px hsla(0, 0%, 10%, 0.2),
+                  /*0 0 0 2px hsla(0, 0%, 100%, 1),*/
+                  -15px 5px 10px 5px hsla(0, 0%, 100%, 0.5),
+                  15px 5px 10px 5px hsla(0, 0%, 0%, 0.5);
+
+      outline: 1px solid hsla(180, 0%, 90%, 0.5);
+
+      /*filter: drop-shadow(15px 10px 10px 25px hsla(0, 0%, 0%, 0.7)),*/
+    }
+
+    #crater1 {
+      position: relative;
+      left: 0vw;
+      bottom: calc(5vh + 100px);
+    }
+
+    #crater2 {
+      position: relative;
+      left: 0vw;
+      bottom: calc(5vh + 80px);
+    }
+
+    #crater3 {
+      position: relative;
+      left: 0vw;
+      bottom: calc(5vh + 60px);
+    }
+
+    #crater4 {
+      position: relative;
+      left: 0vw;
+      bottom: calc(5vh + 40px);
+    }
+
+    #crater5 {
+      position: relative;
+      left: 0vw;
+      bottom: calc(5vh + 20px);
+    }
+    .boxes {
+      width: 100px;
+      height:100px;
+      /* border-radius: 50%; */
+      background-color: black;
+      color: white;
+      border: 10px solid transparent;
+      overflow: none;
+    }
+
+    .lineboxes {
+      width: 100px;
+      height:100px;
+      /* border-radius: 50%; */
+      background-color: hsla(0, 0%, 0%, 0.5);
+      color: white;
+      border: 10px dotted transparent;
+      overflow: none;
+    }
+
+    footer {
+      position: absolute;
+      font-family: 'Nanum Gothic', sans-serif;
+      font-weight: 100;
+      /* letter-spacing: 1em; */
+      bottom: 1em;
+      right: 1em;
+      color: black;s
+      /* display: none;*/
+    }
+
+    a:link, a:visited, a:active {
+      font-family: 'Nanum Gothic', sans-serif;
+      font-weight: 100;
+      font-size: 0.75em;
+      color: hsl(0, 10%, 90%) !important;
+      text-decoration: none;
+      padding: 0.3em;
+
+    }
+
+    footer > a:link, a:visited, a:active {
+      color: hsl(0, 10%, 20%);
+      text-decoration: none;
+      padding: 0.3em;
+    }
+
+    footer > a:hover {
+      color: hsl(0, 0%, 20%) !important;
+      text-decoration: none;
+      background-color: hsla(0, 0%, 95%, 0.5);
+      padding: 0.3em;
+      border-radius: 0.3em;
+    }
+
+    @media screen and (min-width: 800px) {
+
+        /*quote {
+            display: block;
+        }*/
+
+        footer {
+            display:block;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+      h1, h2 {
+
+        bottom: 35vh;
+        /*margin-top: 20vh;*/
+      }
+    }
+
+    #current {
+      display: flex;
+      gap: 10px;
+      /*align-items: flex-end;*/
+      margin-bottom: 1em;
+      flex-flow: wrap;
+    }
+
+    .location {
+
+      font-size: 0.75em;
+      color: darkgray;
+
+    }
+
+    .subject {
+
+      font-family: sans-serif;
+      font-style: bold;
+      font-size: 0.9em;
+      color: white;
+
+    }
+
+  </style>
+  <script src="./addons/p5.js"></script>
+  <!-- script src="p5.sound.js"></script -->
+  <script src="sketch.js"></script>
+
+
+</head>
+
+<body>
+  <main>
+    <quote> Aber diese Beschäftigung der Urteilskraft, welche uns unsere eigenen Erkenntniskräfte fühlen läßt, ist noch nicht das Interesse an den Handlungen und ihrer Moralität selbst. Sie macht bloß, daß man sich gerne mit einer solchen Beurteilung unterhält, und gibt der Tugend, oder der Denkungsart nach moralischen Gesetzen, eine Form der Schönheit, die bewundert, darum aber noch nicht gesucht wird (laudatur et alget); wie alles, dessen Betrachtung subjektiv ein Bewußtsein der Harmonie unserer Vorstellungskräfte bewirkt, und wobei wir unser ganzes Erkenntnisvermögen (Verstand und Einbildungskraft) gestärkt fühlen, ein Wohlgefallen hervorbringt, das sich auch andern mitteilen läßt, wobei gleichwohl die Existenz des Objekts uns gleichgültig bleibt, indem es nur als die Veranlassung angesehen wird, der über die Tierheit erhabenen Anlage der Talente in uns inne zu werden. <br><br>
+    <small> - Immanuel Kant, Kritik der praktischen Vernunft, Originalausgabe (Riga 1788), pp. 285-6 </small>
+    </quote>
+
+    <h1> Sookyung Cho </h1>
+    <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> a designer, researcher, educator who cares about changes.</h2>
+
+    <section id="playground">
+
+    <!--
+        <div id="crater1">  <div class="hole" > </div></div>
+        <div id="crater2">  <div class="hole" > </div></div>
+        <div id="crater3">  <div class="hole" > </div></div>
+        <div id="crater4">  <div class="hole" > </div></div>
+        <div id="crater5">  <div class="hole" > </div></div>
+      -->
+      <div id='current'>
+
+        <div class="lineboxes">
+2022
+        <br><br>
+        <span class="subject"> Quantitative User Research</span>
+          <br>
+          <span class="location"> HUE </span>
+        </div>
+
+        <div class="lineboxes">
+2022
+        <br><br>
+        <span class="subject"> Designing Accessibility</span>
+          <br>
+          <span class="location"> SLSA @Purdue</span>
+        </div>
+
+        <div class="lineboxes">
+2022
+        <br>
+        <span class="subject"> Reaccessing Visual Content Design</span> <br>
+        <span class="location">
+        SIGDOC @Boston</span>
+        </div>
+
+        <div class="lineboxes">
+2022
+        <br>
+        <span class="subject"> Visualizing Crochet Overlay</span> <br>
+        <span class="location"> C&C @Venice, Italy </span> <br>
+        </div>
+
+        <div class="lineboxes">
+2022
+        <br><br><br>
+        <span class="subject"> Art & Healing </span> <br>
+        <span class="location"> HUE </span> <br>
+        </div>
+
+<!--
+        <div class="boxes">
+        2022
+        <br>
+
+          upcoming (Oct. 6th) Designing Accessibility, SLSA @Purdue, U.S.A. <br>
+          upcoming (Oct. 6th) Reaccesssing Content Design, SIGDOC @boston, U.S.A. <br>
+          (Jun. 23th) Visualizing Crochet Overlay, C&C @venice, italy <br>
+
+        </div>
+
+        <div class="boxes">
+        2021
+        <br>
+
+        </div>
+        -->
+        <div class="boxes">
+        2019-current
+        <br>
+        <span class="location">@UCLA</span>
+        </div>
+
+        <div class="boxes">
+        2019-2013
+        <br>
+        <span class="location">@NKU</span>
+        </div>
+
+        <div class="boxes">
+        2012-2008
+        <br>
+          <span class="location">@Univerity of Michigan</span>
+        </div>
+
+        <div class="boxes">
+        2007-2005
+        <br>
+          <span class="location">@Seoul Nationl University</span>
+        </div>
+
+        <div class="boxes">
+        2005-1998
+        <br>
+          <span class="location">@Seoul</span>
+        </div>
+
+        <div class="boxes">
+        1993-1998
+        <br>
+          <span class="location">@KAIST</span>
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <section id="timemachine">
+
+    </section>
+
+
+  </main>
+
+  <footer>
+    <!--a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a --> | <a href="mailto:sookie@g.ucla.edu"> contact: sookie at g dot ucla dot edu </a> | <!-- button id='soundBTN'> sound </button -->
+ </footer>
+
+<script>
+  const myBody = document.querySelector("body");
+  let myQuote = document.querySelector("quote");
+  let myName = document.querySelector("h1");
+  let mySubtitle = document.querySelector("h2");
+  let myButton = document.querySelector("#soundBTN");
+  const myPlayground = document.querySelector("#playground");
+  let myCraters = document.querySelectorAll(".craters");
+  let myNews = document.querySelectorAll(".news");
+  let xOff = (Math.floor(Math.random() * (window.innerWidth/3)));
+  let news = [];
+  news[0] = "submitted the revised version of the technical paper for SIGCHI22";
+  news[1] = "submitted two pictorals for ACM C&C (creativity and cognition)";
+  news[2] = "working on a manuscript of financial intelligence";
+  news[3] = "working on a manuscript about content design and multimeida accessibility for SIGDOC";
+  news[4] = "developing a project about machine learning and design process";
+  news[5] = "developing a project about design of caring and healing";
+
+  let max = 1.2;
+  let min = 0.5;
+  let wOff = Math.floor(Math.random() * (max - min + 1) + min);
+  // document.body.onload = addElement;
+  // myCrater1.style.transform = "translateX("+xOff+")";
+
+  // myCrater1.style.transform = "translateX("+xOff+"px)";
+
+  // console.log('ml5 version:', ml5.version);
+
+  myQuote.style.display = 'none';
+  myName.style.transform = 'translateY(-30vh)';
+  myName.style.fontSize = "5vmin";
+  mySubtitle.style.transform = 'translateY(-30vh)';
+  mySubtitle.style.fontSize = "1.5vmin";
+
+  myCraters.forEach(function(element, i){
+    xOff = Math.floor(Math.random() * (window.innerWidth/4)) + 200;
+    wOff = Math.random() * (max - min + 1) + min;
+    element.style.transform = "scaleX("+wOff+")"+"translateX("+xOff+"px)";
+    // element.innerHTML = news[i];
+    // element.addEventListener('mouseover', showDetail(xOff, i), false);
+  })
+
+
+  myBody.addEventListener('click', showMenu, false);
+  // myButton.addEventListener('click', playSound, false);
+
+  function showDetail(xOff, index) {
+  // console.log(index);
+    // caption.innerHTML = news[index];
+
+  }
+
+  function showMenu(){
+
+    const synth = new Tone.MembraneSynth().toDestination();
+    synth.triggerAttackRelease("C0", "16n");
+
+    // myName.style.fontSize = "1em";
+    // myName.style.transform = 'translateY(10vh)';
+/*
+    const noiseSynth = new Tone.NoiseSynth().toDestination();
+    noiseSynth.triggerAttackRelease("8n", 0.05);
+*/
+  }
+
+/*
+  function addCraters () { // eventually set the parameter for the number of crators to create
+    // create a new div element
+    const newCrater = document.createElement("div");
+
+    // and give it some content
+    // const newContent = document.createTextNode("Hi there and greetings!");
+
+    // add the text node to the newly created div
+    // newCrater.appendChild(newContent);
+
+    // add the newly created element and its content into the DOM
+    myPlayground.appendChild(newCrater);
+    // document.body.insertAfer(newCrater, currentDiv);
+  }
+*/
+
+  // function showCraters() {
+
+/*
+    for (let i = 0; i < myCraters.length; i++){
+      myCraters[i].style.left = Math.floor(Math.random() * (window.innerWidth));
+      console.log(myCraters[i]);
+      // myCraters[i].style.display = "block";
+    }
+*/
+
+
+    /*
+    myQuote.style.display = 'none';
+    myName.style.transform = 'translateY(-30vh)';
+    myName.style.fontSize = "12vmin";
+    mySubtitle.style.transform = 'translateY(-30vh)';
+    mySubtitle.style.fontSize = "2.5vmin";
+    */
+  // }
+
+
+
+function playSound() {
+
+  const amSynth = new Tone.AMSynth().toDestination();
+  amSynth.volume.value = -6;
+  amSynth.triggerAttackRelease("G#3", 0.2);
+
+  /*
+
+  const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+  const now = Tone.now();
+  synth.triggerAttack("D4", now);
+  synth.triggerAttack("F4", now + 0.5);
+  synth.triggerAttack("A4", now + 1);
+  synth.triggerAttack("C5", now + 1.5);
+  synth.triggerAttack("E5", now + 2);
+  synth.triggerRelease(["D4", "F4", "A4", "C5", "E5"], now + 2.5);
+*/
+  // const vol = new Tone.Volume().toDestination();
+  // const osc = new Tone.Oscillator().connect(vol).start();
+  // vol.volume.value = 0.001;
+
+/*
+  const player = new Tone.Player("./Inverse_ITU-R_468_weighted__grey_noise_.ogg.mp3").toDestination();
+  Tone.loaded().then(() => {
+  	player.start();
+  });
+*/
+
+
+}
+  function playNoise() {
+
+    /*
+      //create a synth and connect it to the main output (your speakers)
+      const synth = new Tone.Synth().toDestination();
+      //play a middle 'C' for the duration of an 8th note
+      synth.triggerAttackRelease("C4", "8n");
+      */
+
+// need to control the volumn
+/*
+      // initialize the noise and start
+      const noise = new Tone.Noise("brown").start();
+      // make an autofilter to shape the noise
+      const autoFilter = new Tone.AutoFilter({
+      	frequency: "4n",
+      	baseFrequency: 20000,
+      	octaves: 8
+      }).toDestination().start();
+      // connect the noise
+      noise.connect(autoFilter);
+      // start the autofilter LFO
+      autoFilter.start();
+*/
+
+
+/*
+const noise = new Tone.Noise().toDestination().start();
+noise.type = "brown";
+
+const vol = new Tone.Volume().toDestination();
+const osc = new Tone.Oscillator().connect(vol).start();
+vol.volume.value = 0.001;
+*/
+  }
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
