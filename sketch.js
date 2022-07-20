@@ -68,7 +68,7 @@ function draw() {
   modulator.amp(modAmp, 0.01); // fade time of 0.1 for smooth fading
 */
   // background(0, 0, 0, 0.5);
-  stroke(colorOfDay, 10, 90, 0.1);
+  stroke(colorOfDay, 10, 90, 0.02);
   xoff = xoff + .01;
   let n = noise(xoff) * width;
   line(0, n, width, n);
