@@ -97,62 +97,7 @@
       /*filter: drop-shadow(15px 10px 10px 25px hsla(0, 0%, 0%, 0.7)),*/
     }
 
-    .craters {
-      width: 100px;
-      height: 20px;
-      border: 30px solid hsla(180, 20%, 90%, 0.8);
-      border-radius: 50%;
-      /* border-radius: 50% / 100% 100% 0 0;
-      border-radius: 100% 0 0 100% / 50%; */
-      /* border-radius: 100% 100% 0 0 / 50%; */
-
-      /*border-style: dotted dashed solid double;*/
-      /* border-style: none none solid none; */
-       border-style: none solid none none;
-
-      /* background: hsla(180, 10%, 10%, 0.8), radial-gradient(#f69d3c, #3f87a6);*/
-      background: radial-gradient(farthest-corner at 20px 10px, hsla(180, 10%, 10%, 1) 0%, hsla(180, 10%, 10%, 0.7) 100%);
-      /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%); */
-
-      box-shadow: 0 0 0 1px hsla(0, 0%, 10%, 0.2),
-                  /*0 0 0 2px hsla(0, 0%, 100%, 1),*/
-                  -15px 5px 10px 5px hsla(0, 0%, 100%, 0.5),
-                  15px 5px 10px 5px hsla(0, 0%, 0%, 0.5);
-
-      outline: 1px solid hsla(180, 0%, 90%, 0.5);
-
-      /*filter: drop-shadow(15px 10px 10px 25px hsla(0, 0%, 0%, 0.7)),*/
-    }
-
-    #crater1 {
-      position: relative;
-      left: 0vw;
-      bottom: calc(5vh + 100px);
-    }
-
-    #crater2 {
-      position: relative;
-      left: 0vw;
-      bottom: calc(5vh + 80px);
-    }
-
-    #crater3 {
-      position: relative;
-      left: 0vw;
-      bottom: calc(5vh + 60px);
-    }
-
-    #crater4 {
-      position: relative;
-      left: 0vw;
-      bottom: calc(5vh + 40px);
-    }
-
-    #crater5 {
-      position: relative;
-      left: 0vw;
-      bottom: calc(5vh + 20px);
-    }
+    
     .boxes {
       width: 100px;
       height:100px;
@@ -208,22 +153,46 @@
       border-radius: 0.3em;
     }
 
-    @media screen and (min-width: 800px) {
+   @media (max-width:480px) { /* smartphones, iPhone, portrait 480x320 phones */
 
-        /*quote {
-            display: block;
-        }*/
+      h1{
+        transform: translateY(0vh);
+        font-size: 5vmin;
+      }
+      h2{
+        transform: translateY(0vh);
+        font-size: 1.5vmin;
+      }
 
-        footer {
-            display:block;
-        }
+      #playground {
+          overflow-y:scroll;
+          margin-left: 8vw;
+          margin-bottom: 20vh;
+      }
+
+      .boxes {
+        width: 60vw;
+        height: 3em;
+        /* border-radius: 50%; */
+        background-color: black;
+        color: white;
+        border: 10px solid transparent;
+        overflow: none;
+      }
+
+      .lineboxes {
+        display: none;
+      }
+
     }
-
-    @media screen and (max-width: 800px) {
-      h1, h2 {
-
-        bottom: 35vh;
-        /*margin-top: 20vh;*/
+    @media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+      h1{
+        transform: translateY(-60vh);
+        font-size: 5vmin;
+      }
+      h2{
+        transform: translateY(-60vh);
+        font-size: 1.5vmin;
       }
     }
 
@@ -421,10 +390,13 @@
   // console.log('ml5 version:', ml5.version);
 
   myQuote.style.display = 'none';
+  
+  /*
   myName.style.transform = 'translateY(-30vh)';
   myName.style.fontSize = "5vmin";
   mySubtitle.style.transform = 'translateY(-30vh)';
   mySubtitle.style.fontSize = "1.5vmin";
+  */
 
   myCraters.forEach(function(element, i){
     xOff = Math.floor(Math.random() * (window.innerWidth/4)) + 200;
@@ -456,43 +428,6 @@
     noiseSynth.triggerAttackRelease("8n", 0.05);
 */
   }
-
-/*
-  function addCraters () { // eventually set the parameter for the number of crators to create
-    // create a new div element
-    const newCrater = document.createElement("div");
-
-    // and give it some content
-    // const newContent = document.createTextNode("Hi there and greetings!");
-
-    // add the text node to the newly created div
-    // newCrater.appendChild(newContent);
-
-    // add the newly created element and its content into the DOM
-    myPlayground.appendChild(newCrater);
-    // document.body.insertAfer(newCrater, currentDiv);
-  }
-*/
-
-  // function showCraters() {
-
-/*
-    for (let i = 0; i < myCraters.length; i++){
-      myCraters[i].style.left = Math.floor(Math.random() * (window.innerWidth));
-      console.log(myCraters[i]);
-      // myCraters[i].style.display = "block";
-    }
-*/
-
-
-    /*
-    myQuote.style.display = 'none';
-    myName.style.transform = 'translateY(-30vh)';
-    myName.style.fontSize = "12vmin";
-    mySubtitle.style.transform = 'translateY(-30vh)';
-    mySubtitle.style.fontSize = "2.5vmin";
-    */
-  // }
 
 
 
