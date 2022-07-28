@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="EN">
 
 <head>
   <meta charset="utf-8">
@@ -191,7 +191,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-size: 1em;
-      color: hsl(0, 10%, 90%) !important;
+      color: hsl(0, 10%, 50%) !important;
       text-decoration: none;
       /* padding: 0.3em; */
 
@@ -276,19 +276,63 @@
         font-size: 1.5vmin;
       }
     }
-    @media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-    @media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-    @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+    @media (max-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+      
+      }
+      
+    @media (max-width:854px)  { 
+        h1{
+        transform: translateY(-99vh);
+        font-size: 2vmin;
+      }
+      h2{
+        transform: translateY(-105vh);
+        font-size: 1vmin;
+      }
+      
+    }
+      
+    @media (max-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+
+      
+      
+    }
+    
+    @media (max-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+        
+      h1{
+        transform: translateY(-75vh);
+        font-size: 5vmin;
+      }
+      h2{
+        transform: translateY(-75vh);
+        font-size: 1.5vmin;
+      }
+      
+      }
     @media (min-width:1281px) { /* hi-res laptops and desktops */ }
 
 
     #current, #timeline {
       display: flex;
-      gap: 10px;
-      /*align-items: flex-end;*/
-      margin-bottom: 1em;
+      column-gap: 10px;
+      row-gap: 10px;
+      justify-content: flex-end;
+     /*align-content: flex-start;*/
       flex-flow: wrap;
+      /* flex-direction: row-reverse; */
     }
+      
+      #current {
+        margin-bottom: 10px;
+        
+        flex-wrap: wrap-reverse;
+      }
+      
+      #timeline {
+        margin-bottom: 1em;
+      }
+
 
     .location {
 
@@ -334,6 +378,59 @@
       -->
       <div id="current">
 
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vR5NvQKKw_0HaVzzvt8ioBSo08_naYRa88oCfaYao3KGPlkzrlS9Wo7W0bE0Z6yuYTGGndLiJXEct7Z/pub?start=false&loop=false&delayms=3000" target="_blank">
+        <div class="lineboxes">
+2020
+        <br><br>
+        <span class="subject">UX research + Web</span>
+          <br>
+          <span class="location"> Chef-farid + HUE</span>
+        </div>
+</a>
+    
+<a href="https://simonpenny.net/frontpage-events.html" target="_blank">
+        <div class="lineboxes">
+2020
+        <br><br>
+        <span class="subject">Web Design & Development</span>
+          <br>
+          <span class="location"> SimonPenny.net </span>
+        </div>
+</a>
+
+<a href="https://pubmed.ncbi.nlm.nih.gov/32048884/" target="_blank">
+        <div class="lineboxes">
+2020
+        <br><br>
+        <span class="subject">AR Telerobotics</span>
+          <br>
+          <span class="location"> Human Factors </span>
+        </div>
+</a>
+
+
+          
+<a href="https://drive.google.com/file/d/1lYTvyWkWuwYuH4VgDthKIkhXA_laMolM/view?usp=sharing" target="_blank">
+        <div class="lineboxes">
+2021
+        <br><br>
+        <span class="subject">Quantitative User Research</span>
+          <br>
+          <span class="location"> HUE </span>
+        </div>
+</a>
+       
+<a href="https://dl.acm.org/doi/pdf/10.1145/3472714.3473664" target="_blank">
+        <div class="lineboxes">
+2021
+        <br><br>
+        <span class="subject">Accessibility & SEO</span>
+          <br>
+          <span class="location"> HRsimple + HUE </span>
+        </div>
+</a>
+          
+
 <a href="https://docs.google.com/document/d/1OTsZoxEgB8yjqV7hbo5lmfphwFr4WddPwSsu7JV5Kms/edit?usp=sharing" target="_blank">
         <div class="lineboxes">
           2022
@@ -369,14 +466,14 @@
         <span class="location"> C&C @Venice, Italy </span> <br>
         </div>
 </a>
-
-<a href="https://drive.google.com/file/d/1lYTvyWkWuwYuH4VgDthKIkhXA_laMolM/view?usp=sharing" target="_blank">
+   
+<a href="https://dl.acm.org/doi/pdf/10.1145/3491102.3517539?casa_token=3eMpfX07O6UAAAAA:lGsEDQawROqSiWvS_vFBw3bKaR8Sha-aZVpIaP55qUy_BKf3bmidczBa-R-6MUAPeb6wIRnzCSmO" target="_blank">
         <div class="lineboxes">
-2021
+2022
         <br><br>
-        <span class="subject">Quantitative User Research</span>
+        <span class="subject">Way of Seeing with AI</span>
           <br>
-          <span class="location"> HUE </span>
+          <span class="location"> SIGCHI22 </span>
         </div>
 </a>
 
