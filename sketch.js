@@ -7,7 +7,7 @@ let bx1, by1, bx2, by2, bx3, by3, bx4, by4;
 let starHeight = [];
 let menu = [];
 let links = ['http://ancova.x10.mx/wp/about-me/', 'http://ancova.x10.mx/wp/research/', 'http://ancova.x10.mx/wp/portfolio/', 'http://ancova.x10.mx/wp/teaching/', ' '];
-let linktext = ['about me', 'play ground', 'time machine', 'learn to teach', ' '];
+let linktext = ['about me', 'playground', 'time machine', 'learn to teach', ' '];
 
 let carrier; // this is the oscillator we will hear
 let modulator; // this oscillator will modulate the amplitude of the carrier
