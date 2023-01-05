@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Sookyung Cho - Detailed bio and portfolio </title>
+  </head>
+    
+<style>
+    
+   @property --c {
+      syntax: "<color>"; /* its type */
+      inherits: false;
+      initial-value: lightgray; /* the initial value */
+    }
+
+    body {
+        font-size: 14px;
+        line-height: normal;
+    }
+    h1 {
+      /* position: absolute;*/
+      margin-left: 12vw;
+      /* bottom: 10vh;*/
+      margin-top: 20vh;
+      color: hsl(0, 0%, 5%);
+      font-size: 10vmin;
+      font-weight: 300;
+      font-family: 'Cormorant Garamond', serif;
+      filter: drop-shadow(0 0 0.75rem darkgray);
+    }
+    
+    h2 {
+      margin-left: 12vw;
+      font-family: 'Nanum Gothic', sans-serif;
+      font-weight: 100;
+      font-size: 2.5vmin;
+      /* bottom: calc(10vh - 1vmin);*/
+    }
+    
+    /* h4 {
+        font-size: 2em;
+    }*/
+    
+    
+    section {
+        /*position: absolute;*/
+        margin-left: 12vw;
+        /* left: 4vw;*/
+        /* bottom: 0vh; /* pull it down later */
+        margin-top: 20vh;
+        margin-bottom: 3em;
+        margin-right: 12vw;
+        color: black;
+        font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .boxes {
+     box-sizing: content-box;
+      width: 100px;
+      height:100px;
+      /* border-radius: 50%; */
+      background-color: black;
+      color: white;
+      border: 10px solid transparent;
+      overflow: none;
+    }
+    
+    .whiteboxes {
+      box-sizing: content-box;
+      background-color: hsla(0, 0%, 0%, 0.2);
+      /* border: 10px dotted black; */
+    }
+
+    .lineboxes, .emptyboxes {
+    box-sizing: content-box;  
+    width: 100px;
+      height:100px;
+      /* border-radius: 50%; */
+      background-color: hsla(0, 0%, 0%, 0.8);
+      color: white;
+      border: 10px dotted transparent;
+      overflow: none;
+        float: left;
+    }
+    
+    
+    
+    #current, #timeline, #recent {
+      display: flex;
+      column-gap: 10px;
+      row-gap: 10px;
+      /*justify-content: flex-end;*/
+     /*align-content: flex-start;*/
+      flex-flow: wrap;
+    }
+      
+      #recent {
+        margin-bottom: 10px;
+        
+        flex-wrap: wrap-reverse;
+        flex-direction: column-reverse;
+      }
+    
+      
+      #timeline, #current {
+        margin-bottom: 1em;
+      }
+
+
+    .location {
+
+      font-size: 0.85em;
+      
+      color: darkgray;
+
+    }
+
+    .subject {
+
+      font-family: sans-serif;
+      font-style: bold;
+      font-size: 0.9em;
+      
+      color: white;
+    }
+    
+    .description {
+        padding: 10px;
+        height: 100px;
+        overflow: hidden;
+    }
+    
+    .center-description {
+        padding: 10px;
+        height: 100px;
+        overflow: hidden;
+        text-align: center;
+        background: linear-gradient(.25turn, lightgray, 10%, transparent);
+    }
+    
+    .center-description:hover {
+        --c: black;
+        background: linear-gradient(.25turn, var(--c), 90%, transparent);
+        color: white;
+    }
+    
+    a {
+        --c: lightgray;
+        text-decoration: none;
+        /* color: darkcyan;*/
+        color: black;
+        background-color: white;
+        
+        transition: --c 1s;
+        /* background: linear-gradient(.25turn, lightgray, 10%, transparent);*/
+        background: linear-gradient(.25turn, var(--c), 10%, transparent);
+    }
+    
+
+    
+    a:hover {
+        --c: black;
+        background: linear-gradient(.25turn, var(--c), 90%, transparent);
+        color: white;
+        
+    }
+    
+    
+</style>
+    
+  <body>
+    <h1>Sookyung Cho</h1>
+    <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> a designer, researcher, educator who cares about changes.</h2>  
+      
+    
+    <section id="aboutMe">
+      
+        <h3> About me </h3>
+        
+            
+        <p>I am an interdisciplinary researcher and intergrated designer across academia and industry with decades of experience in scientific design research methods, design process, and interactive media storytelling. I conducted various experience design and research projects in Samsung Electronics, Art Center NABi, and SK Telecom for next-generation products and services by envisioning scenarios, innovative product design prototypes, usability/user testing, strategic plans, and design process modeling and management.</p>
+
+        <!-- details>
+            
+        <p> In academia, I studied the meaning of aesthetic experience across modern philosophers and aesthetic theorists under Immanuel Kant’s influence. Hence, I approach design under the frame of aesthetic judgment to bridge the scientific knowledge and ethics in decision making. Kindchenschema has been my research topic to experiment with such a scientific framework: how bio-semiotic cues can trigger protective and caring behaviors and how modern design utilizes such normative aesthetics. I conducted multiple studies and published empirical/quantitative evidence on how we can measure and evaluate aesthetics with objective cues to support behavioral changes by design. </p>
+
+        <p> Main research interest includes Aesthetic Judgment and Decision Making, Axiology of Design, Psychology of Design, Embodied cognition and Experience design, Creative Coding + Computational Aesthetics, Visualization for multi-dimensional data, and empirical and quantitative design research methods.</p>
+        <p> During 8 years in the industry, I have conducted various projects in Samsung Electronics, Art Center NABi, and SK Telecom. My responsibilities included user research with envisioning future scenarios, prototyping, usability/user testing, and modeling a design process. I learned leadership, project management, and collaborative problem-solving. I believe my strength is to find a common factor of the actors that forms the design space as their network.</p>
+        </details -->
+
+        
+        <p> </p>
+        
+        <p> Design, in my perspective, is a decision-making process for positive changes in human well-being. We stand as designers who are responsible for the world with the artifacts we’ve made, as well as decision-makers who can introduce creative solutions that can help other people for better choices. For better decision-making, designers should understand humans in terms of perception, cognition, emotion, judgment, and interplay within them. Designers need to have a scientific mind: observation, pattern-finding, modeling, and evaluation with feedback in order to predict the effect of the designs. We can expand the understanding of design through theories and methods from humane studies.</p>
+        
+        <!--p> 
+        I studied Computer Science and Industrial Design (B.S., KAIST in South Korea), achieved an M.A. in Aesthetics (from Seoul National University in South Korea), and received my doctoral degree in Design Science from the University of Michigan (in the U.S.A.) with the dissertation about Kindchenschema.</p -->
+        
+        <p> I’m currently an independent design researcher and expanding my research area to Digital Humanities for Art/Design History, Aesthetics, and Psychology. I taught Cognitive/Social Psychology, Visual/Interaction/Experience Design, Non-Linear Interactive Storytelling, and Creative Coding at the academic institutions including Yonsei University, the University of Michigan, Northern Kentucky University, the University of Cincinnati, and currently teaching at UCLA. Since 2020, I co-founded HUE Project (Humans in User Experience) and serve as an advisor and principal project manager to advocate human-centered design and research. Please feel free to contact me <a href="mailto:sookie@g.ucla.edu"> [ sookie at g dot ucla dot edu ]</a> or <a href="mailto:hello.hue.project@gmail.edu"> [ HUE ] </a> for project collaboration </p>
+      
+    </section>
+      
+    <!-- hr class=" bg-secondary border-1 border-top border-dark w-50" -->
+
+      
+<section id="representative">
+    <h3> Selected works</h3>
+        
+    <div id="recentSelected">
+           
+
+        <div class="whiteboxes">
+            
+            <img src="HUE-project-front.png" class="img-fluid w-100" alt="HUE website screenshot">
+
+     </div>   
+<a href="./case-study-hue.html" target="_blank">       
+        <div class="center-description pt-3">
+
+            <h4> HUE project </h4>
+            Desigining UX networking &amp; platform
+                    
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+</a>            
+
+        
+            <p style="height:3em"></p>
+        
+        
+        <div class="whiteboxes">
+            
+            <img src="HRI-ar.png" class="img-fluid w-100" alt="HUE website screenshot">
+
+     </div>   
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vQoV3ChK3ymry0g3j8ADW7XDnGbJ2KJ-YrtJOWu8ecHP3tztTN3tguNL2bkOfnns--xZt8n-GiNMVVG/pub?start=false&loop=false&delayms=3000" target="_blank">       
+        <div class="center-description pt-3">
+
+            <h4> Nonverbal Cues to Communicate Hazards in Mixed-Reality Telerobotic Systems
+ </h4>
+            Quantative research &amp; Human Factors
+                    
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+</a>            
+
+        
+            <p style="height:3em"></p>
+            
+
+        <div class="whiteboxes">
+            
+            <img src="./la-historia-sketch.png" class="img-fluid w-100" alt="la historia consolidation diagram">
+    </div> 
+
+<a href="https://chill-option-62c.notion.site/Field-Research-0b3b8b2a95944bc8846cb24040167609" target="_blank">
+        <div class="center-description pt-3">
+            <h4> La Historia </h4>
+            Design ethnography for collected memory
+                       
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+ </a>       
+
+               <p style="height:3em"></p>
+
+            
+
+        <div class="whiteboxes">
+            
+            <img src="./ResearchPlanning.png" class="img-fluid w-100" alt="Chef Farid research planning diagram">
+    </div> 
+            
+<a href="https://chill-option-62c.notion.site/Chef-farid-a1a668ae0c3d4af5b7875878d0bce1e4" target="_blank">
+        <div class="center-description pt-3">
+            <h4> Chef Farid </h4>
+            Mixed method UX research &amp; design
+                       
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+        
+</a>
+            
+               <p style="height:3em"></p>
+    
+        <div class="whiteboxes">
+            
+            <img src="./HRsimple-UT.png" class="img-fluid w-100" alt="Chef Farid research planning diagram">
+    </div> 
+            
+<a href="https://hue.humspace.ucla.edu/project/" target="_blank">
+        <div class="center-description pt-3">
+            <h4> HRsimple </h4>
+            Usability testing and contextual Inquiry
+                       
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+        
+</a>
+            
+               <p style="height:3em"></p>
+            
+
+
+        <div class="whiteboxes">
+            
+            <img src="./CarStori.png" class="img-fluid w-100" alt="Car Restoration login screen">
+    </div>  
+
+<a href="https://www.figma.com/proto/Mbr8ADMeSikY7cbLIrmOgm/Car-Restoration-Project?node-id=907%3A1378&scaling=contain&page-id=898%3A1356" target="_blank">            
+        <div class="center-description pt-3">
+            <h4> CarStori (Singer version)</h4>
+            Product storytelling and interactive prototyping
+                       
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+</a>        
+
+               <p style="height:3em"></p>
+            
+
+
+    </div>
+        <hr>
+    </section> 
+      
+    
+            
+    <section id="playground">
+         <h3> Current, recent, or old works</h3>
+        
+                <!-- p class="mb-4"> I am an interdisciplinary researcher and intergrated designer across academia and industry. 
+                    
+                    <!--
+                    The work examples for the related methods are marked with: 
+
+                    <span class="badge bg-light text-dark border ">Quantitaitve </span>
+                    <span class="badge bg-light text-dark border">Qualitative</span>
+                    <span class="badge bg-light text-dark border">Introspective</span>
+                    <span class="badge bg-light text-dark border">Artificial Intelligence/ Machine Learning</span >
+                    <span class="badge bg-light text-dark border">Evaluative</span>
+                    <span class="badge bg-light text-dark border">VR/AR/Mixed Reality</span>
+                    <span class="badge bg-light text-dark border">Human Factors</span>
+                    <span class="badge bg-light text-dark border">Usability Testing</span>
+                    -->
+                    
+                <!-- /p -->
+        
+        <!-- p class="mb-4"> 
+                These are what make me busy these days:
+        
+        </p -->
+        
+       <div id="current">     
+
+        <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">La Historia Museum UX</span>
+          <br>
+          <span class="location">HUE</span>
+        </div>
+           </a>
+           
+        <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">TeleVi: Medical+Music Visualization</span>
+          <br>
+          <span class="location"> </span>
+        </div>
+           </a>
+           
+        <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">Annotations in Music Learning Assistant</span>
+          <br>
+          <span class="location"> </span>
+        </div>
+        </a>
+           
+        <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">Route: Joy of Driving App UX</span>
+          <br>
+          <span class="location">HUE</span>
+        </div>
+           </a>
+           
+        <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">CarStori: Restoration Update App UX</span>
+          <br>
+          <span class="location">HUE</span>
+        </div>
+           </a>
+           
+        </div>
+        
+                <p class="mb-4 mt-4"> 
+                Recently published works:
+        
+        </p>
+
+    <!--
+        <div id="crater1">  <div class="hole" > </div></div>
+        <div id="crater2">  <div class="hole" > </div></div>
+        <div id="crater3">  <div class="hole" > </div></div>
+        <div id="crater4">  <div class="hole" > </div></div>
+        <div id="crater5">  <div class="hole" > </div></div>
+      -->
+      <div id="recent">
+
+<a href="https://docs.google.com/presentation/d/e/2PACX-1vR5NvQKKw_0HaVzzvt8ioBSo08_naYRa88oCfaYao3KGPlkzrlS9Wo7W0bE0Z6yuYTGGndLiJXEct7Z/pub?start=false&loop=false&delayms=3000" target="_blank">
+        <div class="lineboxes">
+2020
+        <br><br>
+        <span  class="subject">UX research + Web</span>
+          <br>
+          <span class="location"> Chef-farid + HUE</span>
+        </div>
+        <div class='description'> I was introduced to Chef Farid who was a multicultural chef and wanted to open his chef business. To help him with the web presence, HUE conducted user research and developed the user experience design with intensive benchmarking, co-creative map, demand analysis, semistructured interview, persona-scenarios, wireframes, interface design system, impression test, and perception studies with multivariate analysis through Amazon Mturk.               
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+        
+</a>
+    
+<a href="https://simonpenny.net/frontpage-events.html" target="_blank">
+        <div class="lineboxes">
+2020
+        <br><br>
+        <span class="subject">Web Design &amp; Development</span>
+          <br>
+          <span class="location"> SimonPenny.net </span>
+        </div>
+    <div class='description'> Exploring the creative web-documentation for Professor Simon Penny of University of California Irvine. The improved design supports better accessibility and visual storytelling. In the development, I made a structure more flexible, responsive, and less server dependent.              
+            <!-- span class="badge bg-light text-dark border">Creative Coding </span> <span class="badge bg-light text-dark border"> Web Development </span> <span class="badge bg-light text-dark border"> UX/UI Design </span--> 
+    </div>
+</a>
+
+<a href="https://pubmed.ncbi.nlm.nih.gov/32048884/" target="_blank">
+        <div class="lineboxes">
+2020
+        <br><br>
+        <span class="subject">AR Telerobotics</span>
+          <br>
+          <span class="location"> Human Factors </span>
+        </div>
+    <div class='description'> I collaborated with researchers at University of Tartu to investigate naturalistic cues in communication of hazards and danger in a telerobotics context for VR/AR interface. I contributed to the main part of statistical analysis with Python + R and literature review of psychology and cognitive ergonomics.              
+            <!-- span class="badge bg-light text-dark border">Human Factors</span> <span class="badge bg-light text-dark border">Quantitative</span> <span class="badge bg-light text-dark border">Generative</span> <span class="badge bg-light text-dark border">AR/VR</span--> 
+    </div>
+</a>
+
+
+          
+<a href="https://drive.google.com/file/d/1lYTvyWkWuwYuH4VgDthKIkhXA_laMolM/view?usp=sharing" target="_blank">
+        <div class="lineboxes">
+2021
+        <br><br>
+        <span class="subject">Quantitative User Research</span>
+          <br>
+          <span class="location"> HUE </span>
+        </div>
+    <div class='description'> I’m developing a method to link a quantitative survey (consumer research) and a qualitative research (ethnographic field interviews) to draw the specific insights about the target users’ characteristics toward data-driven user experience persona and scenario design.               
+            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+</a>
+       
+<a href="https://dl.acm.org/doi/pdf/10.1145/3472714.3473664" target="_blank">
+        <div class="lineboxes">
+2021
+        <br><br>
+        <span class="subject">Accessibility &amp; SEO</span>
+          <br>
+          <span class="location"> HRsimple + HUE </span>
+        </div>
+    <div class='description'> This generative/evaluative study explored the relationship between web accessibility and SEO on how impactful the hidden codes can be customer exposure and user experience for the communication within the organization.             
+            <!--span class="badge bg-light text-dark border"> Accessibility | SEO </span> <span class="badge bg-light text-dark border"> Generative </span> <span class="badge bg-light text-dark border"> Evaluative </span-->
+    </div>
+</a>
+          
+
+<a href="https://docs.google.com/document/d/1OTsZoxEgB8yjqV7hbo5lmfphwFr4WddPwSsu7JV5Kms/edit?usp=sharing" target="_blank">
+        <div class="lineboxes">
+        2022
+                  <br><br>
+                  <span class="subject">Creativity & Healing</span><br>
+                  <span class="location"> HUE </span> <br>
+        </div>
+    <div class='description'> We want to capture how people appreciate the everyday moment and what helps us to survive through hardship. Particularly we want to connect three terms to create a positive value that our design can contribute to individual users in human life: Healing, caring, and creativity.               
+            <!--span class="badge bg-light text-dark border"> Generative </span> <span class="badge bg-light text-dark border">Qualitative</span --> </div>
+</a>
+
+<a href="https://docs.google.com/document/d/1c-5__AmM7ngU_kZYdWKgeNzYv7r1O14-TJDVy1WhcFE/edit?usp=sharing">
+        <div class="lineboxes">
+2022
+        <br><br>
+        <span class="subject">Reaccessing Visual Content Design</span><br>
+        <span class="location">
+        SIGDOC @Boston</span>
+        </div>
+    <div class='description'> In this case study, we propose content guidelines for the accessible delivery of visual storytelling for users who may not be able to process the visual medium.              
+            <!--span class="badge bg-light text-dark border"> Evaluative </span --> </div>
+</a>
+
+<a href="https://drive.google.com/file/d/108l6WJOfVsar5MjXmuU8tSnJKmxZmceS/view?usp=sharing" target="_blank">
+        <div class="lineboxes">
+2022
+        <br><br>
+        <span class="subject">Visualizing Crochet AR Overlay</span><br>
+        <span class="location"> C&C @Venice, Italy </span> <br>
+        </div>
+    <div class='description'> By introspective and generative methods of self-documented sketches, we investigated how human-material interactions in craft-making can be documented with the three layers of information - material, tool, and bodily movement/feedback. We share the design implecation for visaul overlay design for AR context for kineasthetic knowledge.           
+            <!-- span class="badge bg-light text-dark border"> Introspective </span> <span class="badge bg-light text-dark border"> Generative </span --> </div>
+</a>        
+   
+<a href="https://docs.google.com/presentation/d/1GBhQqLgRTgQhciYvvnEXiYkXT_h4k6qeMuv5bDnrvIg/edit?usp=sharing" target="_blank">
+        <div class="lineboxes">
+2022
+        <br><br>
+        <span class="subject">Designing Accessibility</span>
+          <br>
+          <span class="location"> SLSA @Purdue </span>
+        </div>
+    <div class='description'> In this presentation, I claim that how we design an 'abstraction' process of the content matters for accessible and approachable online reading. I review the design theories and practices of abstraction and suggest Compression, Translation, and Association as conceptual mechanisms of folding and unfolding the contents.                 
+            <!-- span class="badge bg-light text-dark border"> Introspective </span> <span class="badge bg-light text-dark border"> Generative </span --> </div>
+</a>
+          
+<a href="https://dl.acm.org/doi/pdf/10.1145/3491102.3517539?casa_token=3eMpfX07O6UAAAAA:lGsEDQawROqSiWvS_vFBw3bKaR8Sha-aZVpIaP55qUy_BKf3bmidczBa-R-6MUAPeb6wIRnzCSmO" target="_blank">
+        <div class="lineboxes">
+2022
+        <br><br>
+        <span class="subject">Way of Seeing with AI</span>
+          <br>
+          <span class="location"> SIGCHI22 </span>
+        </div>
+    <div class='description'> Taking a researcher-introspective approach, we reflectively analyzed the processes and outcomes of the inquiry. The findings revealed that during the creative practice, the activity of seeing is a meaning-making process that is guided, shifted, and diffracted through visual conversations between visible and invisible qualities suggested by compositional rules and computer vision.                 
+            <!-- span class="badge bg-light text-dark border"> Introspective </span> <span class="badge bg-light text-dark border"> Generative </span --> </div>
+</a>
+
+          
+
+
+</div>
+<!--
+        <div class="boxes">
+        2022
+        <br>
+          upcoming (Oct. 6th) Designing Accessibility, SLSA @Purdue, U.S.A. <br>
+          upcoming (Oct. 6th) Reaccesssing Content Design, SIGDOC @boston, U.S.A. <br>
+          (Jun. 23th) Visualizing Crochet Overlay, C&C @venice, italy <br>
+        </div>
+        <div class="boxes">
+        2021
+        <br>
+        </div>
+        -->
+<div id="timeline">
+
+        <div class="boxes">
+        2019-current
+        <br>
+        <span class="location">@UCLA</span>
+        </div>
+
+        <div class="boxes">
+        2019-2013
+        <br>
+        <span class="location">@NKU</span>
+        </div>
+
+        <div class="boxes">
+        2012-2008
+        <br>
+          <span class="location">@Univerity of Michigan</span>
+        </div>
+
+        <div class="boxes">
+        2007-2005
+        <br>
+          <span class="location">@Seoul National University</span>
+        </div>
+
+        <div class="boxes">
+        2005-1998
+        <br>
+          <span class="location">@Seoul</span>
+        </div>
+
+        <div class="boxes">
+        1993-1998
+        <br>
+          <span class="location">@KAIST</span>
+        </div>
+
+
+
+
+
+      </div>
+
+
+    </section>
+    
+    <!-- hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" -->
+   
+    <!-- section id="teaching">     
+        
+      <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">Digital Humanities DH110: UX_UI </span>
+          <br>
+          <span class="location">teaching @ UCLA </span>
+        </div>
+        </a>
+           
+        <a>
+        <div class="emptyboxes">
+        <br><br>
+        <span class="subject">Lab in Cognitive Psychology PSYCH121 </span>
+          <br>
+          <span class="location">teaching @ UCLA </span>
+        </div>
+           </a>
+      </section -->
+      
+      
+    <section id="epiologue" >
+      
+        <h3> Coda </h3>
+    <p class = "pb-5 mb-5">
+        <!--span>If I would have a chance to spend time for myself, </span -->I like to read Immanuel Kant’s critiques; study more about James C. Maxwell's works; listen to Keith Jarrett's performance; practice J.S. Bach well tempered clavier and cello suits; or decode M.C. Escher’s works. <!-- But priorities on taking care of my kids, bunnies, and garden. <br -->
+        
+    </p>
+        
+        
+        <hr>
+        
+    <footer class="text-center">
+    <!--a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a --> Sookyung Cho  <a href="mailto:sookie@g.ucla.edu">[ sookie at g dot ucla dot edu ] </a>  <!-- button id='soundBTN'> sound </button -->
+    </footer>
+    
+    </section>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
