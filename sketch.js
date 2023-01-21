@@ -23,8 +23,8 @@ function setup() {
   colorOfDay = random(-15 + (m - 1)*15, 15 + (m - 1)*15); // jan for -15 to 15
   colorAdjust = day(); // 1 ~ 28/31
 
-  fill(0, 0, 100, 0.5);
-  stroke(0, 0, 50, 0.8);
+  fill(0, 0, 75, 0.5);
+  stroke(0, 0, 75, 0.8);
   for(let i = 1; i < 5; i++)
   {
     starHeight[i] = random(30, 200);
