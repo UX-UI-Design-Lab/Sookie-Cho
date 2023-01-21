@@ -55,12 +55,24 @@
     h1 {
         filter: drop-shadow(0.05rem 0.05rem 0.1rem lightgray);
     }
+    
     #subtitle{
       font-size: 3vmin;
       letter-spacing: 3vmin;
     }
     
-
+    #intro {
+        animation: 120s infinite fadeOUT;     
+    } 
+      
+      @keyframes fadeOUT {
+          from {
+              opacity: 1;
+          }
+          to {
+              opacity: 0;
+          }
+      }
 
     h2 {
       font-family: 'Nanum Gothic', sans-serif;
