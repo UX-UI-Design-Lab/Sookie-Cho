@@ -24,7 +24,7 @@ function setup() {
   colorAdjust = day(); // 1 ~ 28/31
 
   fill(0, 0, 100, 0.5);
-  stroke(0, 0, 100, 0.3);
+  stroke(0, 0, 85, 0.3);
   for(let i = 1; i < 5; i++)
   {
     starHeight[i] = random(30, 200);
