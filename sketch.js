@@ -6,8 +6,8 @@ let bx1, by1, bx2, by2, bx3, by3, bx4, by4;
 
 let starHeight = [];
 let menu = [];
-let links = ['./details-expanded.html', './sample-works.html', './resume.html', './teaching.html', ' '];
-let linktext = ['about me', 'sample of works', 'resume', 'learn to teach', ' '];
+let links = ['./details-expanded.html', './sample-works.html', './portfolio.html', './teaching.html', ' '];
+let linktext = ['about me', 'sample of works', 'portfolio', 'learn to teach', ' '];
 
 let carrier; // this is the oscillator we will hear
 let modulator; // this oscillator will modulate the amplitude of the carrier
