@@ -43,9 +43,10 @@
       /* bottom: calc(10vh - 1vmin);*/
     }
     
-    /* h4 {
-        font-size: 2em;
-    }*/
+    h4 {
+        font-size: 2vw;
+        line-height: 6vw;
+    }
     
     
     section {
@@ -72,9 +73,87 @@
     }
     
     .whiteboxes {
+     
       box-sizing: content-box;
       background-color: hsla(0, 0%, 0%, 0.2);
       /* border: 10px dotted black; */
+    }
+    
+     .pictureboxes {
+        box-sizing: content-box;
+        
+        width: 24vw;
+        height: 24vw;
+        /* line-height: 24vw; */
+         
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        color: red;
+        border: 1px outset hsla(0, 0%, 85%, 0.5);
+        text-align: center; 
+        overflow: hidden;
+        
+    }
+    
+    
+    #picturebox01 {
+        background-image: url(./RLT-userflow.png);
+        
+    }
+    
+    #picturebox02 {
+        background-image: url(./la-historia-logo.png);
+        background-size: 100px 100px;
+        
+    }
+    
+    #picturebox03 {
+        background-image: url(./HRsimple-UT.png);
+        
+    }
+    
+    #picturebox04 {
+        background-image: url(./ResearchPlanning.png);
+        
+    }
+    
+    
+    #picturebox05 {
+        background-image: url(./CarStori.png);
+        
+    }
+    
+        
+    #picturebox06 {
+        background-image: url(./HUE-project-front.png);
+        
+    }
+    
+    
+    .vCenterText {
+        background: transparent;
+        width: 24vw;
+        height: 24vw;
+        color: transparent;
+        transition: 0.5s background;
+        line-height: 24vw;
+    }
+    
+    .vCenterText:hover {
+        background: black;
+        opacity: 0.75;
+        color: white;
+    }
+    
+
+    #recentSelected {
+      display: flex;
+      column-gap: 2px;
+      row-gap: 2px;
+      /*justify-content: flex-end;*/
+     /*align-content: flex-start;*/
+      flex-flow: wrap;
     }
 
     .lineboxes, .emptyboxes {
@@ -137,6 +216,7 @@
     }
     
     .center-description {
+        position: absolute;
         padding: 10px;
         height: 100px;
         overflow: hidden;
@@ -146,37 +226,39 @@
     
     .center-description:hover {
         --c: black;
-        background: linear-gradient(.25turn, var(--c), 90%, transparent);
+        /* background: linear-gradient(.25turn, var(--c), 90%, transparent); */
         color: white;
     }
-    
+   
+
     a {
         --c: lightgray;
         text-decoration: none;
         /* color: darkcyan;*/
-        color: black;
-        background-color: white;
+        color: transparent;
+        /* background-color: white;*/
         
         transition: --c 1s;
         /* background: linear-gradient(.25turn, lightgray, 10%, transparent);*/
-        background: linear-gradient(.25turn, var(--c), 10%, transparent);
+        /* background: linear-gradient(.25turn, var(--c), 10%, transparent); */
     }
     
 
     
     a:hover {
         --c: black;
-        background: linear-gradient(.25turn, var(--c), 90%, transparent);
+        /* background: linear-gradient(.25turn, var(--c), 90%, transparent); */
         color: white;
         
     }
+
     
     
 </style>
     
   <body>
     <h1>Sookyung Cho</h1>
-    <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> Sample of works (2020 - current) </h2>  
+    <h2> <!-- &nbsp;<span id="subtitle">PORTFOLIO.</span--><!--currently, recently, or previously --> Design &amp; Creative works </h2>  
       
     
     <section id="aboutMe">
@@ -208,122 +290,80 @@
       
     <!-- hr class=" bg-secondary border-1 border-top border-dark w-50" -->
 
-      
+ 
+    
 <section id="representative">
     <!-- h3> Recent works</h3 -->
         
     <div id="recentSelected">
                      
-
+        <a href="https://docs.google.com/presentation/d/e/2PACX-1vQoV3ChK3ymry0g3j8ADW7XDnGbJ2KJ-YrtJOWu8ecHP3tztTN3tguNL2bkOfnns--xZt8n-GiNMVVG/pub?start=false&loop=false&delayms=3000" target="_blank"> 
+        <div class="pictureboxes" id="picturebox01">
+            <div class="vCenterText"> 
+                 <h4> Road Less Traveled </h4>
+                Produce design and interaction design
+            </div>
+        </div>  
+        </a>
         
-            <p style="height:6em"></p>
-        
-        
-        <div class="whiteboxes">
-            
-            <img src="./HRI-AR.png" class="img-fluid w-100" alt="Human Robot Interaction Conference Presentation">
-
-     </div>   
-<a href="https://docs.google.com/presentation/d/e/2PACX-1vQoV3ChK3ymry0g3j8ADW7XDnGbJ2KJ-YrtJOWu8ecHP3tztTN3tguNL2bkOfnns--xZt8n-GiNMVVG/pub?start=false&loop=false&delayms=3000" target="_blank">       
-        <div class="center-description pt-3">
-
-            <h4> Nonverbal Cues in Mixed-Reality Telerobotic Systems
- </h4>
-            Quantative research &amp; Human Factors
-                    
-            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
-</a>            
-
-        
-            <p style="height:6em"></p>
-            
-
-        <div class="whiteboxes">
-            
-            <img src="./la-historia-sketch.png" class="img-fluid w-100" alt="la historia consolidation diagram">
-    </div> 
-
-<a href="https://chill-option-62c.notion.site/Field-Research-0b3b8b2a95944bc8846cb24040167609" target="_blank">
-        <div class="center-description pt-3">
+        <a href="https://chill-option-62c.notion.site/Field-Research-0b3b8b2a95944bc8846cb24040167609" target="_blank">
+        <div class="pictureboxes" id="picturebox02">
+            <div class="vCenterText"> 
             <h4> La Historia </h4>
             Design ethnography for collected memory
-                       
-            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
- </a>       
-
-               <p style="height:6em"></p>
-
-            
-
-        <div class="whiteboxes">
-            
-            <img src="./ResearchPlanning.png" class="img-fluid w-100" alt="Chef Farid research planning diagram">
-    </div> 
-            
-<a href="https://chill-option-62c.notion.site/Chef-farid-a1a668ae0c3d4af5b7875878d0bce1e4" target="_blank">
-        <div class="center-description pt-3">
-            <h4> Chef Farid </h4>
-            Mixed method UX research &amp; design
-                       
-            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+            </div>
+        </div>  
+        </a>
         
-</a>
-            
-               <p style="height:6em"></p>
-    
-        <div class="whiteboxes">
-            
-            <img src="./HRsimple-UT.png" class="img-fluid w-100" alt="Chef Farid research planning diagram">
-    </div> 
-            
 <a href="https://hue.humspace.ucla.edu/project/" target="_blank">
-        <div class="center-description pt-3">
+        <div class="pictureboxes" id="picturebox03">
+            <div class="vCenterText"> 
             <h4> HRsimple </h4>
             Usability testing and contextual Inquiry
-                       
-            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
+            </div>
+        </div>  
+        </a>
         
-</a>
-            
-               <p style="height:6em"></p>
-            
+<a href="https://chill-option-62c.notion.site/Chef-farid-a1a668ae0c3d4af5b7875878d0bce1e4" target="_blank">
+        
+        <div class="pictureboxes" id="picturebox04">
+            <div class="vCenterText"> 
 
-
-        <div class="whiteboxes">
-            
-            <img src="./CarStori.png" class="img-fluid w-100" alt="Car Restoration login screen">
-    </div>  
-
+            <h4> Chef Farid </h4>
+            Mixed method UX research &amp; design
+            </div>
+        </div>  
+        </a>
+        
 <a href="https://www.figma.com/proto/Mbr8ADMeSikY7cbLIrmOgm/Car-Restoration-Project?node-id=907%3A1378&scaling=contain&page-id=898%3A1356" target="_blank">            
-        <div class="center-description pt-3">
+        
+        <div class="pictureboxes" id="picturebox05">
+            <div class="vCenterText"> 
             <h4> CarStori (Singer version)</h4>
             Product storytelling and interactive prototyping
-                       
-            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
-</a>        
-
-               <p style="height:6em"></p>
+            </div>
+        </div>  
+        </a>
+        
+<a href="./case-study-hue.html" target="_blank">        
+        <div class="pictureboxes" id="picturebox06">
+            <div class="vCenterText"> 
+            <h4> HUE project </h4>
+            Desigining UX networking &amp; platform   
+            </div>
+        </div>  
+        </a>
         
 
-<div class="whiteboxes">
-            
-            <img src="HUE-project-front.png" class="img-fluid w-100" alt="HUE website screenshot">
+
 
 </div>   
-<a href="./case-study-hue.html" target="_blank">       
-        <div class="center-description pt-3">
 
-            <h4> HUE project </h4>
-            Desigining UX networking &amp; platform
-                    
-            <!-- span class="badge bg-light text-dark border">Quantitaitve </span> <span class="badge bg-light text-dark border">Qualitative</span--> </div>
-</a>  
-            
+      </section>         
+        
+               
+    
 
-
-    </div>
-        <hr>
-    </section> 
       
    
     <!-- hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));" -->
@@ -385,9 +425,9 @@
 
  -->
         
-    <footer class="text-center">
-    <!--a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a --> Sookyung Cho  <a href="mailto:sookie@g.ucla.edu">[ sookie at g dot ucla dot edu ] </a>  <!-- button id='soundBTN'> sound </button -->
-    </footer>
+    <!-- footer class="text-center">
+    <a href="http://ancova.x10.mx/wp/portfolio/" target="_blank"> old portfolio (password required) </a> Sookyung Cho  <a href="mailto:sookie@g.ucla.edu">[ sookie at g dot ucla dot edu ] </a>  
+    </footer -->
     
     </section>
     <!-- Optional JavaScript; choose one of the two! -->
