@@ -6,7 +6,7 @@ let bx1, by1, bx2, by2, bx3, by3, bx4, by4;
 
 let starHeight = [];
 let menu = [];
-let links = ['./details-expanded.html', './sample-works.html', './portfolio.html', './teaching.html', ' '];
+let links = ['./details-expanded.html', './sample-works.html', './portfolio.html', 'https://sites.google.com/umich.edu/2021f-ucinci-daap/home', ' '];
 let linktext = ['about me', 'design', 'research', 'teaching', ' '];
 
 let carrier; // this is the oscillator we will hear
