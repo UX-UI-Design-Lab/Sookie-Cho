@@ -18,7 +18,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noiseSeed(99);
   // stroke(0, 10);
-  background(255);
+  background(0);
   m = month();
   colorOfDay = random(-15 + (m - 1)*15, 15 + (m - 1)*15); // jan for -15 to 15
   colorAdjust = day(); // 1 ~ 28/31
